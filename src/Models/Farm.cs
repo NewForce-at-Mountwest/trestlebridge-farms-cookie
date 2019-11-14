@@ -14,6 +14,7 @@ namespace Trestlebridge.Models
             This method must specify the correct product interface of the
             resource being purchased.
          */
+        //  Add stuff from facilities to list in farmstatus option
         public void PurchaseResource<T> (IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());

@@ -16,6 +16,7 @@ namespace Trestlebridge.Actions
             {
                 Console.WriteLine($"{i + 1}. Grazing Field");
             }
+            // Why are they using a JS style for loop
 
             Console.WriteLine();
 
@@ -26,6 +27,7 @@ namespace Trestlebridge.Actions
             int choice = Int32.Parse(Console.ReadLine());
 
             farm.GrazingFields[choice].AddResource(animal);
+            // add list of current options
 
             /*
                 Couldn't get this to work. Can you?

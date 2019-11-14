@@ -20,6 +20,7 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     ChooseGrazingField.CollectInput(farm, new Cow());
+                    // build case for all the other animals
                     break;
                 default:
                     break;

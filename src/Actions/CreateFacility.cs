@@ -8,8 +8,10 @@ namespace Trestlebridge.Actions {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Grazing field");
             Console.WriteLine ("2. Plowed field");
+            // add other facility options and add classes to models
 
             Console.WriteLine ();
+            // Need to set up a message to show created field
             Console.WriteLine ("Choose what you want to create");
 
             Console.Write ("> ");
