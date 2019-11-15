@@ -22,12 +22,14 @@ namespace Trestlebridge.Models.Facilities {
         {
             // TODO: implement this...
             _animals.Add(animal);
+           Console.WriteLine($"The {animal} is in the field");
         }
 
         public void AddResource (List<IGrazing> animals)
         {
             // TODO: implement this...
-            _animals.AddRange(animals);
+            animals.ForEach(animal=> _animals.Add(animal));
+          Console.WriteLine($"The {animals} have been put in the field");
         }
 
         public override string ToString()
