@@ -28,6 +28,9 @@ namespace Trestlebridge.Actions {
 
                     case 2:
                     farm.AddPlowedField(new PlowedField());
+Console.WriteLine("New Plowed Field Added");
+                    Console.WriteLine("Press Any Key To Continue");
+                    Console.ReadLine();
                     break;
                 default:
                     break;
