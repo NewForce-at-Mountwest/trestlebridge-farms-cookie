@@ -6,17 +6,12 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
-<<<<<<< HEAD
-    public class ChoosePlowedField
-=======
     public class ChoosePlantingField
->>>>>>> master
     {
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
 
-<<<<<<< HEAD
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Planting Field");
@@ -27,7 +22,6 @@ namespace Trestlebridge.Actions
 
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Plant the seed where?");
-=======
             for (int i = 0; i < farm.PlantingFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Planting Field");
@@ -37,12 +31,10 @@ namespace Trestlebridge.Actions
 
             // Message to choose correct planting field
             Console.WriteLine($"Plant the seeds where?");
->>>>>>> master
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-<<<<<<< HEAD
             farm.PlowedFields[choice].AddResource(seed);
             // add list of current options
 
@@ -51,10 +43,8 @@ namespace Trestlebridge.Actions
                 Stretch goal. Only if the app is fully functional.
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
-=======
             farm.PlantingFields[choice].AddResource(seed);
 
->>>>>>> master
 
         }
     }
