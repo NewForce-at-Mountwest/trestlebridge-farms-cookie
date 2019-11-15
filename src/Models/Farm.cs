@@ -62,7 +62,14 @@ namespace Trestlebridge.Models
         public void AddChickenHouse(ChickenHouse house)
         {
             ChickenHouses.Add(house);
-            
+        }
+        public override string ToString()
+        {
+            StringBuilder report = new StringBuilder();
+
+            ChickenHouses.ForEach(ch => report.Append(ch));
+
+            return report.ToString();
         }
         public void AddDuckHouse(DuckHouse house)
         {
