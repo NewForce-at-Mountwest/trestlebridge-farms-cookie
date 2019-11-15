@@ -20,7 +20,7 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             string input = Console.ReadLine();
-
+// functions to create facilities with completion message
             switch (Int32.Parse(input))
             {
                 case 1:

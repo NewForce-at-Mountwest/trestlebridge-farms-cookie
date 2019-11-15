@@ -7,9 +7,12 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<IMeatProducing>
     {
-        private int _capacity = 50;
+        // set capacity for duck house
+        private int _capacity = 12;
+        // create unique id for each duck house
         private Guid _id = Guid.NewGuid();
 
+// build a list for animals in the duck house
         private List<IMeatProducing> _animals = new List<IMeatProducing>();
 
         public double Capacity {
@@ -17,8 +20,6 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
-
-        public string Message { get;}
 
         public void AddResource (IMeatProducing animal)
         {
