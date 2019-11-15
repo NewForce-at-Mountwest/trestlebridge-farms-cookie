@@ -13,6 +13,8 @@ namespace Trestlebridge.Models
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
+
         /*
             This method must specify the correct product interface of the
             resource being purchased.
@@ -30,12 +32,26 @@ namespace Trestlebridge.Models
                     break;
                 default:
                     break;
+
+                     case "Goat":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+
+                     case "Sheep":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+
+
             }
         }
 
         public void AddGrazingField(GrazingField field)
         {
             GrazingFields.Add(field);
+
+        }
+        public void AddPlowedField (PlowedField field){
+            PlowedFields.Add(field);
         }
 
         public override string ToString()
@@ -43,6 +59,7 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            PlowedFields.ForEach(pf => report.Append(pf));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
             DuckHouses.ForEach(dh => report.Append(dh));
