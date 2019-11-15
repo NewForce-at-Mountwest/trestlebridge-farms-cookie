@@ -40,6 +40,7 @@ Console.WriteLine("New Plowed Field Added");
 
 
 
+
                 case 4:
                     farm.AddChickenHouse(new ChickenHouse());
                     Console.WriteLine("You have a new chicken house!");
@@ -48,7 +49,7 @@ Console.WriteLine("New Plowed Field Added");
                     break;
                 case 5:
                     farm.AddDuckHouse(new DuckHouse());
-                    Console.WriteLine("You have a new chicken house!");
+                    Console.WriteLine("You have a new duck house!");
                     Console.WriteLine("Hit any key to continue");
                     Console.ReadLine();
 

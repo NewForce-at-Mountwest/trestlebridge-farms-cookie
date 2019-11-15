@@ -4,29 +4,32 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class PlowedField : IFacility<ISeedProducing>
     {
-        private int _capacity = 50;
+        private int _capacity = 65;
         private Guid _id = Guid.NewGuid();
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
-        public void AddResource (ISeedProducing seed)
+        public void AddResource(ISeedProducing seed)
         {
-            // TODO: implement this...
+            // AddResource seeds to internal list..
             _seeds.Add(seed);
         }
 
-        public void AddResource (List<ISeedProducing> seeds)
+        public void AddResource(List<ISeedProducing> seeds)
         {
-            // TODO: implement this...
+            // Add list of seeds to list
             _seeds.AddRange(_seeds);
         }
 
@@ -41,9 +44,6 @@ namespace Trestlebridge.Models.Facilities {
             return output.ToString();
         }
 
-        // internal void AddResource (ISeedProducing seed)
-        // {
-        //     throw new NotImplementedException();
-        // }
+
     }
 }
