@@ -9,6 +9,9 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<PlantingField> PlantingFields { get; } = new List<PlantingField>();
+        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
 
@@ -16,8 +19,7 @@ namespace Trestlebridge.Models
             This method must specify the correct product interface of the
             resource being purchased.
          */
-        //  Add stuff from facilities to list in farmstatus option
-        public void PurchaseResource<T> (IResource resource, int index)
+        public void PurchaseResource<T>(IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
@@ -43,7 +45,7 @@ namespace Trestlebridge.Models
             }
         }
 
-        public void AddGrazingField (GrazingField field)
+        public void AddGrazingField(GrazingField field)
         {
             GrazingFields.Add(field);
 
@@ -59,7 +61,37 @@ namespace Trestlebridge.Models
             GrazingFields.ForEach(gf => report.Append(gf));
             PlowedFields.ForEach(pf => report.Append(pf));
 
+            ChickenHouses.ForEach(ch => report.Append(ch));
+            DuckHouses.ForEach(dh => report.Append(dh));
+
             return report.ToString();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void AddChickenHouse(ChickenHouse house)
+        {
+            ChickenHouses.Add(house);
+        }
+
+
+        public void AddDuckHouse(DuckHouse house)
+        {
+            DuckHouses.Add(house);
+        }
+
     }
 }
