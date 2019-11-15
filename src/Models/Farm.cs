@@ -41,6 +41,9 @@ namespace Trestlebridge.Models
 
             GrazingFields.ForEach(gf => report.Append(gf));
 
+            ChickenHouses.ForEach(ch => report.Append(ch));
+            DuckHouses.ForEach(dh => report.Append(dh));
+
             return report.ToString();
         }
 
@@ -63,14 +66,8 @@ namespace Trestlebridge.Models
         {
             ChickenHouses.Add(house);
         }
-        public override string ToString()
-        {
-            StringBuilder report = new StringBuilder();
 
-            ChickenHouses.ForEach(ch => report.Append(ch));
 
-            return report.ToString();
-        }
         public void AddDuckHouse(DuckHouse house)
         {
             DuckHouses.Add(house);

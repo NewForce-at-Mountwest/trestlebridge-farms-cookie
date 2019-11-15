@@ -18,10 +18,11 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void AddResource (IMeatProducing animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+             _animals.Add(animal);
         }
 
         public void AddResource (List<IMeatProducing> animals)

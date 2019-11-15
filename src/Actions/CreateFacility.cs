@@ -32,10 +32,16 @@ namespace Trestlebridge.Actions
 
                 case 4:
                     farm.AddChickenHouse(new ChickenHouse());
-                    
+                    Console.WriteLine("You have a new chicken house!");
+                    Console.WriteLine("Hit any key to continue");
+                    Console.ReadLine();
                     break;
                 case 5:
                     farm.AddDuckHouse(new DuckHouse());
+                    Console.WriteLine("You have a new chicken house!");
+                    Console.WriteLine("Hit any key to continue");
+                    Console.ReadLine();
+
                     break;
                 default:
                     break;
