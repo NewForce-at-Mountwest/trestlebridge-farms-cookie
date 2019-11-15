@@ -39,9 +39,6 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
 
-                     case "Ostrich":
-                    GrazingFields[index].AddResource((IGrazing)resource);
-                    break;
 
             }
         }
