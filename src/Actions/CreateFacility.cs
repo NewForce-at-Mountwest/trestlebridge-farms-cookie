@@ -22,7 +22,10 @@ namespace Trestlebridge.Actions {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
                     Console.WriteLine("New Grazing Field Added");
+                    Console.WriteLine("Press Any Key To Continue");
+                    Console.ReadLine();
                     break;
+
                     case 2:
                     farm.AddPlowedField(new PlowedField());
                     break;
