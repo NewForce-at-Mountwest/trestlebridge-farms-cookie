@@ -21,13 +21,15 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (IGrazing animal)
         {
             // TODO: implement this...
-            throw new NotImplementedException();
+            _animals.Add(animal);
+           Console.WriteLine($"The {animal} is in the field");
         }
 
-        public void AddResource (List<IGrazing> animals) 
+        public void AddResource (List<IGrazing> animals)
         {
             // TODO: implement this...
-            throw new NotImplementedException();
+            animals.ForEach(animal=> _animals.Add(animal));
+          Console.WriteLine($"The {animals} have been put in the field");
         }
 
         public override string ToString()
