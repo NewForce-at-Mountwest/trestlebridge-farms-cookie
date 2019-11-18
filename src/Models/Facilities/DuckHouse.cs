@@ -20,10 +20,16 @@ namespace Trestlebridge.Models.Facilities {
 
         public string Message { get;}
 
-        public void AddResource (IMeatProducing animal)
+        public void AddResource (IMeatProducing animal){
+        if(this.Capacity > this._animals.Count)
         {
-            _animals.Add(animal);
-        }
+             _animals.Add(animal);
+        }else{
+
+    Console.WriteLine("that duckhouse is full");
+    Console.WriteLine("Press enter to return to main menu");
+    Console.ReadLine();
+        }}
 
         public void AddResource (List<IMeatProducing> animals)
         {
