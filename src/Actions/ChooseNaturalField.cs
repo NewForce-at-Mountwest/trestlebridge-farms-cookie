@@ -7,6 +7,7 @@ namespace Trestlebridge.Actions
 {
     public class ChooseNaturalField
     {
+        // loop through the natural fields and list options for fields to plant
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
@@ -15,24 +16,15 @@ namespace Trestlebridge.Actions
             {
                 Console.WriteLine($"{i + 1}. Natural Field");
             }
-            // Why are they using a JS style for loop
 
             Console.WriteLine();
 
-             
             Console.Write("> ");
+            // Collect response and add seed to the selected field
+
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.NaturalFields[choice].AddResource(seed);
-            // add list of current options
-
-            /*
-                Couldn't get this to work. Can you?
-                Stretch goal. Only if the app is fully functional.
-             */
-            // farm.PurchaseResource<IGrazing>(animal, choice);
-            farm.NaturalFields[choice].AddResource(seed);
-
+            farm.NaturalFields[choice-1].AddResource(seed);
 
         }
     }

@@ -27,6 +27,7 @@ namespace Trestlebridge.Models.Facilities {
         if(this.Capacity > this._animals.Count)
         {
              _animals.Add(animal);
+
         }else{
 
     Console.WriteLine("that duckhouse is full");

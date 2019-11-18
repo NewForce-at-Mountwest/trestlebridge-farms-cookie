@@ -7,6 +7,7 @@ namespace Trestlebridge.Actions
 {
     public class ChoosePlowedField
     {
+        // loop through possible plowed fields to plant seeds
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
@@ -17,12 +18,12 @@ namespace Trestlebridge.Actions
             }
 
             Console.WriteLine();
-
+// Collect user input and add seed to selected field
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.PlowedFields[choice].AddResource(seed);
+            farm.PlowedFields[choice-1].AddResource(seed);
 
 
         }
