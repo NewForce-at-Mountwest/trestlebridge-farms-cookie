@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class PlowedField : IFacility<ISeedProducing>
     {
-        private int _capacity = 50;
+        private int _capacity = 65;
         private Guid _id = Guid.NewGuid();
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
@@ -47,5 +50,7 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
+
+
     }
 }

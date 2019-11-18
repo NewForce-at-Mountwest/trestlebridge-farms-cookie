@@ -5,26 +5,26 @@ using Trestlebridge.Models;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseNaturalField
+    public class ChoosePlowedField
     {
-        // loop through the natural fields and list options for fields to plant
+        // loop through possible plowed fields to plant seeds
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
 
-            for (int i = 0; i < farm.NaturalFields.Count; i++)
+            for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field");
+                Console.WriteLine($"{i + 1}. Plowed Field");
             }
 
             Console.WriteLine();
+// Collect user input and add seed to selected field
 
             Console.Write("> ");
-            // Collect response and add seed to the selected field
-
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.NaturalFields[choice-1].AddResource(seed);
+            farm.PlowedFields[choice-1].AddResource(seed);
+
 
         }
     }
