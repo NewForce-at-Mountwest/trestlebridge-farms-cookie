@@ -18,12 +18,16 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (IGrazing animal)
+        public void AddResource (IGrazing animal){
+        if(this.Capacity > this._animals.Count)
         {
-            // TODO: implement this...
-            _animals.Add(animal);
-           Console.WriteLine($"The {animal} is in the field");
-        }
+             _animals.Add(animal);
+        }else{
+
+    Console.WriteLine("that grazingfield is full");
+    Console.WriteLine("Press enter to return to main menu");
+    Console.ReadLine();
+        }}
 
         public void AddResource (List<IGrazing> animals)
         {
