@@ -21,7 +21,7 @@ namespace Trestlebridge.Actions
 
             Console.Write("> ");
             string input = Console.ReadLine();
-// functions to create facilities with completion message
+            // functions to create facilities with completion message
             switch (Int32.Parse(input))
             {
                 case 1:
@@ -31,16 +31,16 @@ namespace Trestlebridge.Actions
                     Console.ReadLine();
                     break;
 
-                    case 2:
+                case 2:
                     farm.AddPlowedField(new PlowedField());
-Console.WriteLine("New Plowed Field Added");
+                    Console.WriteLine("New Plowed Field Added");
                     Console.WriteLine("Press Any Key To Continue");
                     Console.ReadLine();
                     break;
 
-                          case 3:
+                case 3:
                     farm.AddNaturalField(new NaturalField());
-Console.WriteLine("New Natural Field Added");
+                    Console.WriteLine("New Natural Field Added");
                     Console.WriteLine("Press Any Key To Continue");
                     Console.ReadLine();
                     break;

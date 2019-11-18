@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
-using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
@@ -18,7 +17,10 @@ namespace Trestlebridge.Actions
             {
                 Console.WriteLine($"{i + 1}. Plowed Field");
             }
-
+            for (int i = 0; i < farm.NaturalFields.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. Natural Field");
+            }
             Console.WriteLine();
 
 
@@ -30,8 +32,8 @@ namespace Trestlebridge.Actions
 
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.PlowedFields[choice-1].AddResource(seed);
-
+            farm.PlowedFields[choice - 1].AddResource(seed);
+            farm.NaturalFields[choice -1].AddResource(seed);
         }
     }
 }
