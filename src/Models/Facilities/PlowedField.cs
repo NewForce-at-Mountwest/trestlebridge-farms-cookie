@@ -27,7 +27,7 @@ namespace Trestlebridge.Models.Facilities
              _seeds.Add(seed);
         }else{
 
-    Console.WriteLine("that  Natura field is full");
+    Console.WriteLine("that  Plowed field is full");
     Console.WriteLine("Press enter to return to main menu");
     Console.ReadLine();
         }}
