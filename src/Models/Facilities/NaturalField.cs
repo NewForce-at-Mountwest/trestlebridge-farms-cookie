@@ -7,7 +7,8 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class NaturalField : IFacility<ISeedProducing>
     {
-        private int _capacity = 50;
+        public string FieldCapacity {get;set;}
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
@@ -18,16 +19,23 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (ISeedProducing seed)
+        public void AddResource (ISeedProducing seed){
+        if(this.Capacity > this._seeds.Count)
         {
-            // TODO: implement this...
-            _seeds.Add(seed);
-        }
+             _seeds.Add(seed);
+        }else{
 
-        public void AddResource (List<ISeedProducing> seeds)
+    Console.WriteLine("that  Natural field is full");
+    Console.WriteLine("Press enter to return to main menu");
+    Console.ReadLine();
+        }}
+
+        public void AddResource (List<ISeedProducing> seed)
         {
             // TODO: implement this...
-            _seeds.AddRange(_seeds);
+
+            seed.ForEach(seed=> _seeds.Add(seed));
+          Console.WriteLine($"The {seed} have been put in the field");
         }
 
         public override string ToString()
@@ -40,10 +48,5 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
-
-        // internal void AddResource (ISeedProducing seed)
-        // {
-        //     throw new NotImplementedException();
-        // }
     }
 }

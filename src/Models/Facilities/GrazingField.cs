@@ -7,6 +7,7 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
+        public string FieldCapacity {get;set;}
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
@@ -32,6 +33,7 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (List<IGrazing> animals)
         {
             // TODO: implement this...
+
             animals.ForEach(animal=> _animals.Add(animal));
           Console.WriteLine($"The {animals} have been put in the field");
         }
