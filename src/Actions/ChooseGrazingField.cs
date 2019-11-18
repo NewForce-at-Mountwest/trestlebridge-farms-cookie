@@ -16,7 +16,7 @@ namespace Trestlebridge.Actions
             {
                 Console.WriteLine($"{i + 1}. Grazing Field");
             }
-            // Why are they using a JS style for loop
+            // To show the number of grazing fields
 
             Console.WriteLine();
 
