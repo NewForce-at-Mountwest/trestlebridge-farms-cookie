@@ -7,33 +7,31 @@ namespace Trestlebridge.Actions
 {
     public class ChoosePlantingField
     {
+        // Have user select which field they would like to plant in and direct to that list
 
         // conditional to choose correct field based on input of seed type
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
-            Utils.Clear();
+            Console.WriteLine("Where would you like to plant these seeds?");
 
-            for (int i = 0; i < farm.PlowedFields.Count; i++)
+            Console.WriteLine("1. Natural Field");
+            Console.WriteLine("2. Plowed Field");
+            Console.Write("> ");
+            string choice = Console.ReadLine();
+
+            switch (Int32.Parse(choice))
             {
-                Console.WriteLine($"{i + 1}. Plowed Field");
-            }
-            for (int i = 0; i < farm.NaturalFields.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. Natural Field");
+                case 1:
+                    ChooseNaturalField.CollectInput(farm, seed);
+                    break;
+                case 2:
+                    ChoosePlowedField.CollectInput(farm, seed);
+                    break;
+                default:
+                    break;
             }
             Console.WriteLine();
 
-
-            // Message to choose correct planting field
-            Console.WriteLine($"Plant the seeds where?");
-
-            Console.Write("> ");
-            // add conditional statement to add to correct field choice and capacity?
-
-            int choice = Int32.Parse(Console.ReadLine());
-
-            farm.PlowedFields[choice - 1].AddResource(seed);
-            farm.NaturalFields[choice -1].AddResource(seed);
         }
     }
 }
