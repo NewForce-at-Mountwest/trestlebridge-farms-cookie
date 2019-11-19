@@ -25,7 +25,7 @@ namespace Trestlebridge.Models.Facilities {
              _seeds.Add(seed);
         }else{
 
-    Console.WriteLine("that  Natural field is full");
+    Console.WriteLine("That Natural Field is full");
     Console.WriteLine("Press enter to return to main menu");
     Console.ReadLine();
         }}
