@@ -21,7 +21,7 @@ namespace Trestlebridge.Models.Animals {
     // *** Getter / Setter properties: amount of feed and type of animal
 
         public double GrassPerDay { get; set; } = 4.1;
-        public string Type { get; } = "Goat";
+        public string Type { get; set; } = "Goat";
         string IGrazing.Type { get; set;}
 
     // *** Method: Displays how much feed animal consumes
