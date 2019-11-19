@@ -35,6 +35,11 @@ namespace Trestlebridge.Models.Facilities {
     Console.ReadLine();
         }}
 
+        public void AddResource(List<IMeatProducing> resources)
+        {
+            Console.WriteLine("Add List of ducks to the duck house");
+        }
+
         // string for farm report
         public override string ToString()
         {

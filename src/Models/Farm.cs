@@ -58,7 +58,7 @@ namespace Trestlebridge.Models
         public void AddNaturalField (NaturalField field){
             NaturalFields.Add(field);
         }
-
+// report builder to display farm report
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
