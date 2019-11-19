@@ -12,7 +12,7 @@ namespace Trestlebridge.Models.Animals {
                 return this._id.ToString().Substring(this._id.ToString().Length - 6);
             }
         }
-        public string Type {get;} = "Chicken";
+        public string Type {get; set;} = "Chicken";
 
         public double Butcher()
         {
