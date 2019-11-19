@@ -22,8 +22,7 @@ namespace Trestlebridge.Models.Animals {
 
         public double GrassPerDay { get; set; } = 4.1;
         public string Type { get; set; } = "Goat";
-        string IGrazing.Type { get; set;}
-
+      
     // *** Method: Displays how much feed animal consumes
         public void Graze () {
             Console.WriteLine($"Goat {this._shortId} just ate {this.GrassPerDay}kg of compost.");
