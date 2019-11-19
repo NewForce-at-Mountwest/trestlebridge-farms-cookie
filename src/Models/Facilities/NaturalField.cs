@@ -19,7 +19,7 @@ namespace Trestlebridge.Models.Facilities {
         }
 
         public void AddResource (IComposting seed){
-        if(this.Capacity > this._seeds.Count)
+        if(this.Capacity > _seeds.Count)
         {
              _seeds.Add(seed);
         }else{
@@ -42,8 +42,8 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Natural field {shortId} has {this._seeds.Count} seeds\n");
-            this._seeds.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural field {shortId} has {_seeds.Count} seeds\n");
+            _seeds.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
