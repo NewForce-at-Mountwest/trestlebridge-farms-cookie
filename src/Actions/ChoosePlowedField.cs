@@ -15,7 +15,7 @@ namespace Trestlebridge.Actions
  Utils.Clear();
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Plowedf Field has {farm.PlowedFields[i]._seeds.Count} Plants");
+                Console.WriteLine($"{i + 1}. Plowed Field has {farm.PlowedFields[i]._seeds.Count} Plants");
 
                    var seedreport = from plowedseeds in farm.PlowedFields[i]._seeds
                                    group plowedseeds by plowedseeds.Type into seedgroup
