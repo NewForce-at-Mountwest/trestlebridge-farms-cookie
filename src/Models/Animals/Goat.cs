@@ -22,7 +22,7 @@ namespace Trestlebridge.Models.Animals {
 
         public double GrassPerDay { get; set; } = 4.1;
         public string Type { get; } = "Goat";
-        string IGrazing.Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        string IGrazing.Type { get; set;}
 
     // *** Method: Displays how much feed animal consumes
         public void Graze () {

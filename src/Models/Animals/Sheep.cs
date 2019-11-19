@@ -21,9 +21,10 @@ namespace Trestlebridge.Models.Animals {
     // *** Getter / Setter properties: amount of feed and type of animal
         public double GrassPerDay { get; set; } = 4;
         public string Type { get; } = "Sheep";
-        string IGrazing.Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        string IGrazing.Type { get; set; }
 
-    // *** Method: Displays how much feed animal consumes
+
+        // *** Method: Displays how much feed animal consumes
         public void Graze () {
             Console.WriteLine($"Sheep {this._shortId} just ate {this.GrassPerDay}kg of grass");
         }
