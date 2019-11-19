@@ -3,10 +3,16 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sunflower : IResource, ISeedProducing
+    public class Sunflower : IResource, ISeedProducing, IComposting
     {
         private int _seedsProduced = 650;
+        private int _compostProduced = 21;
         public string Type { get; } = "Sunflower";
+
+        public double Compost()
+        {
+            return _compostProduced;
+        }
 
         public double Harvest () {
             return _seedsProduced;
