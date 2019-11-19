@@ -21,14 +21,8 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
-<<<<<<< HEAD
-
-        public void AddResource (IComposting seed){
-        if(this.Capacity > _seeds.Count)
-=======
         // add seeds to list of plants on a field if there is capacity
         public void AddResource(IComposting seed)
->>>>>>> master
         {
             if (this.Capacity > this._seeds.Count)
             {
