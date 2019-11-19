@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
         public string FieldCapacity {get;set;}
-        private int _capacity = 50;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
         public List<IGrazing> _animals = new List<IGrazing>();
@@ -25,7 +25,7 @@ namespace Trestlebridge.Models.Facilities {
              _animals.Add(animal);
         }else{
 
-    Console.WriteLine("that grazingfield is full");
+    Console.WriteLine("that Grazing Field is full");
     Console.WriteLine("Press enter to return to main menu");
     Console.ReadLine();
         }}

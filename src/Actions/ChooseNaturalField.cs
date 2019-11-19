@@ -8,7 +8,7 @@ namespace Trestlebridge.Actions
     public class ChooseNaturalField
     {
         // loop through the natural fields and list options for fields to plant
-        public static void CollectInput(Farm farm, ISeedProducing seed)
+        public static void CollectInput(Farm farm, IComposting seed)
         {
             Utils.Clear();
 
