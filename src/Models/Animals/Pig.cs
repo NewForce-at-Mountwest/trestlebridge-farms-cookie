@@ -23,7 +23,7 @@ namespace Trestlebridge.Models.Animals {
         public string Type { get; } = "Pig";
         string IGrazing.Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        // *** Method: Displays how much feed animal consumes
+    // *** Method: Displays how much feed animal consumes
         public void Graze () {
             Console.WriteLine($"Pig {this._shortId} just ate {this.GrassPerDay}kg of grass.");
         }
