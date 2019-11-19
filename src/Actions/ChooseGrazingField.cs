@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
@@ -14,11 +15,20 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
-            }
-            // To show the number of grazing fields
+                Console.WriteLine($"{i + 1}. Grazing Field has {farm.GrazingFields[i]._animals.Count} grazing animals");
+                   var ostrichreport = from grazinganimal in farm.GrazingFields[i]._animals
+                                   group grazinganimal by grazinganimal.Type into animalgroup
+                                   select  new Dictionary<string, int>(){
+                {animalgroup.Key, animalgroup.Count()}};
+              Console.WriteLine();
 
-            Console.WriteLine();
+            };
+
+
+
+        // To show the number of grazing fields
+
+        Console.WriteLine();
 
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the animal where?");
@@ -26,14 +36,20 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.GrazingFields[choice-1].AddResource(animal);
+        farm.GrazingFields[choice - 1].AddResource(animal);
 
-            /*
-                Couldn't get this to work. Can you?
-                Stretch goal. Only if the app is fully functional.
-             */
-            // farm.PurchaseResource<IGrazing>(animal, choice);
+        /*
 
-        }
+            // foreach (IGrazing grazingAnimal in farm.GrazingFields[i]._animals)
+            // {
+
+            //     Console.WriteLine(grazingAnimal);
+            // };
+            Couldn't get this to work. Can you?
+            Stretch goal. Only if the app is fully functional.
+         */
+        // farm.PurchaseResource<IGrazing>(animal, choice);
+
     }
+}
 }
