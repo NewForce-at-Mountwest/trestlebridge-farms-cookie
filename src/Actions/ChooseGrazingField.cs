@@ -14,11 +14,16 @@ namespace Trestlebridge.Actions
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Grazing Field has {farm.GrazingFields[i]._animals.Count} grazing animals");
-                   var ostrichreport = from grazinganimal in farm.GrazingFields[i]._animals
+                   var animalreport = from grazinganimal in farm.GrazingFields[i]._animals
                                    group grazinganimal by grazinganimal.Type into animalgroup
                                    select  new Dictionary<string, int>(){
                 {animalgroup.Key, animalgroup.Count()}};
               Console.WriteLine();
+              foreach(Dictionary<string,int> grazinganimal in animalreport){
+    foreach(KeyValuePair<string,int> animalgroup in grazinganimal){
+        Console.WriteLine($"This field has {animalgroup.Value} {animalgroup.Key}s");
+    }
+}
             };
 
 
@@ -29,7 +34,6 @@ namespace Trestlebridge.Actions
 
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the animal where?");
-
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
