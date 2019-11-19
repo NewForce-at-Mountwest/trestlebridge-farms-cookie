@@ -8,13 +8,8 @@ namespace Trestlebridge.Models.Plants
     {
         // set compost volume
         private int _compostProduced = 30;
-<<<<<<< HEAD
         public string Type { get;set; } = "Wildflower";
 
-=======
-        public string Type { get; } = "Wildflower";
-// method to compost wildflowers
->>>>>>> master
         public double Compost()
         {
             return _compostProduced;
