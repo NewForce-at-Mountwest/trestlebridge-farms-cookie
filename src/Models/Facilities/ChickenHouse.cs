@@ -33,12 +33,8 @@ namespace Trestlebridge.Models.Facilities {
     Console.ReadLine();
         }}
 
-        public void AddResource (List<IMeatProducing> animals)
-        {
-            // TODO: implement this...
-            throw new NotImplementedException();
-        }
-
+        
+// string message for farm report
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

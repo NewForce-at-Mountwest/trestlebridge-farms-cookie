@@ -31,8 +31,6 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (List<IComposting> seed)
         {
-            // TODO: implement this...
-
             seed.ForEach(seed=> _seeds.Add(seed));
           Console.WriteLine($"The {seed} have been put in the field");
         }
