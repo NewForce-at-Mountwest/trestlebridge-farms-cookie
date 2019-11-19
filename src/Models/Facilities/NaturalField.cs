@@ -10,7 +10,7 @@ namespace Trestlebridge.Models.Facilities {
         public string FieldCapacity {get;set;}
         private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
-        private List<IComposting> _seeds = new List<IComposting>();
+        public static List<IComposting> _seeds = new List<IComposting>();
 
         public double Capacity {
             get {
