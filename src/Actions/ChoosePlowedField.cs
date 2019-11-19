@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
@@ -14,7 +15,7 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Plowed Field");
+                Console.WriteLine($"{i + 1}. Plowed Field {PlowedField._seeds}{PlowedField._seeds.Count}");
             }
 
             Console.WriteLine();

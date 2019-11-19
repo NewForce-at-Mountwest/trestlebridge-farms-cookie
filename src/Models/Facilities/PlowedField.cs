@@ -11,7 +11,7 @@ namespace Trestlebridge.Models.Facilities
         private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        public static List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
         public double Capacity
         {
@@ -22,7 +22,7 @@ namespace Trestlebridge.Models.Facilities
         }
 
        public void AddResource (ISeedProducing seed){
-        if(this.Capacity > this._seeds.Count)
+        if(this.Capacity > _seeds.Count)
         {
              _seeds.Add(seed);
 
@@ -46,8 +46,8 @@ namespace Trestlebridge.Models.Facilities
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Plowed field {shortId} has {this._seeds.Count} seeds\n");
-            this._seeds.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Plowed field {shortId} has {_seeds.Count} seeds\n");
+            _seeds.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
