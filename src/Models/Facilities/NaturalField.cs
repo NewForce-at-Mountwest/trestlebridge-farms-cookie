@@ -5,13 +5,12 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class NaturalField : IFacility<ISeedProducing>
+    public class NaturalField : IFacility<IComposting>
     {
         public string FieldCapacity {get;set;}
         private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
-
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        private List<IComposting> _seeds = new List<IComposting>();
 
         public double Capacity {
             get {
@@ -19,18 +18,18 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (ISeedProducing seed){
+        public void AddResource (IComposting seed){
         if(this.Capacity > this._seeds.Count)
         {
              _seeds.Add(seed);
         }else{
 
-    Console.WriteLine("that  Natural field is full");
+    Console.WriteLine("That Natural Field is full");
     Console.WriteLine("Press enter to return to main menu");
     Console.ReadLine();
         }}
 
-        public void AddResource (List<ISeedProducing> seed)
+        public void AddResource (List<IComposting> seed)
         {
             // TODO: implement this...
 
@@ -48,5 +47,8 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
+
+
+
     }
 }
