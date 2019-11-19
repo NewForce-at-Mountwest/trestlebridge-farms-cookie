@@ -1,32 +1,36 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
-using Trestlebridge.Models.Facilities;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Actions
 {
     public class ChoosePlowedField
     {
-        // loop through possible plowed fields to plant seeds
+        // loop through the natural fields and list options for fields to plant
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
-            Utils.Clear();
-
+ Utils.Clear();
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Plowed Field {PlowedField._seeds.Count}");
-            }
+                Console.WriteLine($"{i + 1}. Plowedf Field has {farm.PlowedFields[i]._seeds.Count} Plants");
 
-            Console.WriteLine();
-// Collect user input and add seed to selected field
-
-            Console.Write("> ");
-            int choice = Int32.Parse(Console.ReadLine());
-
-            farm.PlowedFields[choice-1].AddResource(seed);
+                   var seedreport = from plowedseeds in farm.PlowedFields[i]._seeds
+                                   group plowedseeds by plowedseeds.Type into seedgroup
+                                   select  new Dictionary<string, int>(){
+                {seedgroup.Key, seedgroup.Count()}};
 
 
+              foreach(Dictionary<string,int> plowedseeds in seedreport){
+    foreach(KeyValuePair<string,int> seedgroup in plowedseeds){
+        Console.WriteLine($"This field has {seedgroup.Value} {seedgroup.Key}s");
         }
-    }
+    };
 }
+Console.WriteLine($"Place the Seed Where?");
+Console.WriteLine("> ");
+int choice = Int32.Parse(Console.ReadLine());
+farm.PlowedFields[choice -1].AddResource(seed);
+    }}}

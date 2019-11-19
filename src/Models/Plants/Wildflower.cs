@@ -6,7 +6,7 @@ namespace Trestlebridge.Models.Plants
     public class Wildflower : IResource, IComposting
     {
         private int _compostProduced = 30;
-        public string Type { get; } = "Wildflower";
+        public string Type { get;set; } = "Wildflower";
 
         public double Compost()
         {

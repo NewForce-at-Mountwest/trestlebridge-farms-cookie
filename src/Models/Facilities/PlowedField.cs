@@ -11,7 +11,7 @@ namespace Trestlebridge.Models.Facilities
         private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
-        public static List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        public List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
         public double Capacity
         {
