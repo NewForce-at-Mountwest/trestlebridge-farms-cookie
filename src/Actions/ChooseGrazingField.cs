@@ -4,7 +4,6 @@ using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
-
 namespace Trestlebridge.Actions
 {
     public class ChooseGrazingField
@@ -12,7 +11,6 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IGrazing animal)
         {
             Utils.Clear();
-
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Grazing Field has {farm.GrazingFields[i]._animals.Count} grazing animals");
@@ -21,7 +19,6 @@ namespace Trestlebridge.Actions
                                    select  new Dictionary<string, int>(){
                 {animalgroup.Key, animalgroup.Count()}};
               Console.WriteLine();
-
             };
 
 
