@@ -25,9 +25,10 @@ namespace Trestlebridge.Models.Facilities
         if(this.Capacity > this._seeds.Count)
         {
              _seeds.Add(seed);
+
         }else{
 
-    Console.WriteLine("that  Plowed field is full");
+    Console.WriteLine("That Plowed field is full");
     Console.WriteLine("Press enter to return to main menu");
     Console.ReadLine();
         }}
