@@ -20,7 +20,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Message { get; set;}
 
         public void AddResource (IMeatProducing animal){
         if(this.Capacity > this._animals.Count)
@@ -33,12 +33,13 @@ namespace Trestlebridge.Models.Facilities {
     Console.ReadLine();
         }}
 
-        public void AddResource (List<IMeatProducing> animals)
+        public void AddResource(List<IMeatProducing> resources)
         {
-            // TODO: implement this...
             throw new NotImplementedException();
         }
 
+
+        // string message for farm report
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

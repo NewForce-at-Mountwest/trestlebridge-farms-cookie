@@ -3,6 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
+    // create class for sesame seeds
     public class Sesame : IResource, ISeedProducing
     {
         private int _seedsProduced = 520;
